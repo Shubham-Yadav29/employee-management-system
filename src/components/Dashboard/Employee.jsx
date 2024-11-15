@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../pieces/Header';
-import Task from '../pieces/Task';
+// import Header from '../other/Header';
+import Task from '../other/Task';
 
 const Dashboard = () => {
 return (
     <>
-    <Header/>
+    {/* <Header/> */}
     <Task/>
     </>
 );

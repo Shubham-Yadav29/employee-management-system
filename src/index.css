@@ -6,12 +6,12 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212; /* Dark background */
+  background-color: #121212;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  
+  min-height: 100vh;
+  height: 100%;
 }
 
 .login-container {
@@ -20,6 +20,7 @@ body {
   align-items: center;
   height: 100%;
   padding: 20px;
+  /* background-color: aqua; */
 }
 
 .login-box {
@@ -32,6 +33,7 @@ body {
   text-align: center;
   color: #fff;
   animation: fadeIn 0.6s ease-out;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15), 5px 5px 5px rgba(255, 64, 129, 0.3); /* Thin shadow on bottom and right */
 }
 
 h2 {
@@ -96,7 +98,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* height: 50vh; */
+  height: 100%;
   width: 100vw;
   padding: 30px;
 }
@@ -213,9 +215,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  /* background-color: aqua; */
 }
-/* Positioning the "Hi" at the top-left corner */
 .top-left {
   text-align: center;
   align-content: center;
@@ -228,21 +228,17 @@ h2 {
   background-color: #ff4081;
 }
 
-/* Positioning the current date at the top-right corner */
 .top-right {
   font-size: 16px;
   font-weight: normal;
   color: #fff;
 }
-
-/* Centered content (header and paragraph) */
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 30px; /* Space to ensure the content doesn't overlap with the top text */
+  margin-top: 30px; 
 }
-
 .header {
   font-size: 24px;
   margin-bottom: 20px;
@@ -280,7 +276,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    /* background-color: aqua; */
   }
   .content {
     display: flex;
@@ -297,7 +292,6 @@ body {
   }
   
   .greeting-container {
-    /* height: 170px; */
     position: relative;
     width: 100%;
     padding: 22px;
@@ -306,8 +300,201 @@ body {
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
-  .task-cover.scrollable {
-    flex-direction: row-reverse; /* Keep the reverse row direction */
-    overflow-x: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  min-height: 100vh;
+
+}
+
+.admin-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-out;
+  /* background-color: antiquewhite; */
+}
+
+.admin-title {
+  font-size: 32px;
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+.task-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.task-form {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  background-color:#1e1e1e;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.7s ease-out;
+  width: 100%;
+}
+/* input{
+  background-color: #1e1e1e;
+  color: white;
+} */
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color:white;
+  margin-bottom: 8px;
+}
+
+input, textarea {
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+  background-color: #1e1e1e;
+}
+
+input:focus, textarea:focus {
+  border-color: #4caf50;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.create-btn {
+  padding: 12px 0;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #388e3c;
+}
+
+/* Keyframe animation for smooth transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 682px){
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  
+.admin-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  margin-bottom: 0px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+}
+}
+.cover-task {
+  padding: 25px 0px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align to the top */
+  gap: 15px;
+  height: 45vh; /* Fixed height for scrolling */
+  width: 100%;
+  background-color:#1e1e1e;
+  overflow: auto; /* Enables scrolling if content overflows */
+  border-radius: 5px;
+}
+.same{
+  min-height:60px;
+  width: 95%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  font-size: 18px;
+}
+.cover-task::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+#task-1{
+background-color: #2196f3;
+}
+#task-2{
+  background-color:#d32f2f;
+}
+#task-3{
+  background-color:#388e3c;
+}
+#task-4{
+  background-color:#ffeb3b;
+      }
+#task-5{
+  background-color:#ff4081;
 }

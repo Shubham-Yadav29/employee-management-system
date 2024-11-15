@@ -1,6 +1,5 @@
 import React from 'react'
-
-const Header = () => {
+const Header = ({handleLogout}) => {
     return (
     <div className="dashboard">
 
@@ -10,7 +9,7 @@ const Header = () => {
         </div>
 
         <div className="header-right">
-            <button className="logout-btn">Log Out</button>
+            <button className="logout-btn" onClick={handleLogout}>Log Out</button>
         </div>
         </div>
 
