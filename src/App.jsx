@@ -1,60 +1,46 @@
 // App.js
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Login from './components/Auth/Login';
 import Admin from './components/Dashboard/Admin';
 import Employee from './components/Dashboard/Employee';
-import Header from './components/other/Header';
-import Header2 from './components/other/Header2';
-import setlocalStorage from './components/Utils/Localstorage';
-import getlocalStorage from './components/Utils/Localstorage';
+import { Authcontext } from './context/AuthProvider';
 
 const App = () => { 
   const [user, setuser] = useState(null)
+  const [loggedInUserData, setLoggedInUserData] = useState(null)
+  const [data , setdata] = useContext(Authcontext);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setuser(storedUser); // If user data exists, set it to the state
+
+  useEffect(()=>{
+    const loggedInUser = localStorage.getItem('loggedInUser')
+    
+    if(loggedInUser){
+      const userData = JSON.parse(loggedInUser)
+      setuser(userData.role)
+      setLoggedInUserData(userData.data)
     }
-  }, []);
+
+  },[])
 
   const handleLogin =(email , password)=>{
     if(email == 'admin@me.com' && password == '123'){
       setuser('admin')
-      localStorage.setItem('user', 'admin');
-    }else if (email == 'user@me.com' && password == '123'){
-      setuser('user')
-      localStorage.setItem('user', 'user');
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }))
+    }else if (data){
+      const employee = data.find((e) => email == e.email && password == e.password)
+      if (employee)
+      setuser('employee')
+      setLoggedInUserData(employee)
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee',data:employee }))
     }
     else {
       alert("Wrong credentials")
     }
   }
-  const handleLogout =()=>{
-    setuser(null)
-    localStorage.removeItem('user');
-  }
-  return (
+  return ( 
     <>
-      {!user ? (
-        <Login handleLogin={handleLogin} />
-      ) : (
-        <>
-          {/* Show the Header or Header2 depending on user type */}
-          {user === 'admin' ? (
-            <Header2 handleLogout={handleLogout} />
-          ) : (
-            <Header handleLogout={handleLogout} />
-          )}
-
-          {/* Render the dashboard component */}
-          {user === 'admin' ? (
-            <Admin /> // Admin Dashboard
-          ) : (
-            <Employee /> // Employee Dashboard
-          )}
-        </>
-      )}
+      {!user ? <Login handleLogin={handleLogin} /> : ''}
+      {user == 'admin' ? <Admin changeUser={setuser} /> : (user == 'employee' ? <Employee changeUser={setuser} data={loggedInUserData} /> : null) }
     </>
   );
 };

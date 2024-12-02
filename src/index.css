@@ -114,6 +114,7 @@ h2 {
   display: flex;
   align-items: end;
   justify-content: flex-end;
+  /* background-color: aqua; */
 }
 
 .logout-btn {
@@ -134,19 +135,24 @@ h2 {
 
 /* Task container */
 .task-container {
+  padding: 0px 10px;
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap */
-  gap: 20px;
+  gap: 30px;
   margin-top: 30px;
   justify-content: space-between;
 }
-.user-name{
-  font-size: 25px;
+.helo{
+  font-size: 22px;
+  display: inline-block;
+}
+.name-hifi{
+  font-size:25px ;
 }
 .task-box {
   display: flex;
   flex-direction: column;
-  padding: 20px 25px 20px 25px;
+  padding: 20px 25px;
   border-radius: 8px;
   font-size: 22px;
   color: white;
@@ -156,12 +162,21 @@ h2 {
 .header-section{
   display: flex;
   justify-content: space-between;
+  padding: 0px 10px;
+  /* background-color: bisque; */
 }
 .task-box p {
   margin: 10px 0 0 0;
 }
+@media screen and (max-width: 680px) {
+  .same1 {
+    width: 8vw;
+    /* background-color: #4caf50; */
+  }
+
+}
 .same{
-  font-size: 30px;
+  font-size: 25px;
 }
 .task-box:hover {
   transform: scale(1.03);
@@ -201,7 +216,7 @@ h2 {
 .greeting-container {
   /* height: 300px; */
   position: relative;
-  width: 25%;
+  width: 350px;
   max-width: 600px; /* Set a max width for better responsiveness */
   padding: 22px;
   background-color: #1e1e1e;
@@ -217,10 +232,10 @@ h2 {
   align-items: end;
 }
 .top-left {
+  padding: 0px 7px ;
   text-align: center;
   align-content: center;
   height: 35px;
-  width: 65px;
   border-radius: 4px ;
   display: inline-block;
   font-size: 16px;
@@ -255,7 +270,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal overflow across the whole body */
 }
 /* Media queries for smaller screens */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 750px) {
   .task-cover {
     flex-direction: column;
   }
@@ -263,7 +278,6 @@ body {
     text-align: center;
     align-content: center;
     height: 35px;
-    width: 50px;
     border-radius: 4px ;
     display: inline-block;
     font-size: 16px;
@@ -307,7 +321,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85vw;
+  /* width: 85vw; */
   min-height: 100vh;
 
 }
@@ -323,19 +337,20 @@ body {
 }
 
 .admin-title {
-  font-size: 32px;
+  font-size: 29px;
   color: #4caf50;
   font-weight: 600;
 }
 
 .logout-btn {
-  padding: 10px 20px;
+  height: 40%;
+  padding: 8px 15px;
   background-color: #f44336;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
@@ -458,43 +473,138 @@ textarea {
 }
 }
 .cover-task {
+  width: 95vw;
   padding: 25px 0px ;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Align to the top */
+  justify-content: flex-start;
   gap: 15px;
-  height: 45vh; /* Fixed height for scrolling */
-  width: 100%;
   background-color:#1e1e1e;
-  overflow: auto; /* Enables scrolling if content overflows */
+  /* overflow: auto;  */
   border-radius: 5px;
+  margin-bottom: 30px;
+  color: white;
 }
-.same{
+.same-2{
   min-height:60px;
   width: 95%;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  gap: 15vw;
   align-items: center;
-  padding: 0px 15px;
-  font-size: 18px;
+  padding: 0px 20px;
+  font-size: 17px;
+  border: 2px solid white;
 }
-.cover-task::-webkit-scrollbar {
+/* .cover-task::-webkit-scrollbar {
   display: none; /* Hide the scrollbar */
-}
-#task-1{
-background-color: #2196f3;
-}
+ */
 #task-2{
-  background-color:#d32f2f;
+  background-color:black;
+  color: white;
 }
-#task-3{
-  background-color:#388e3c;
+.component-divs{
+  display: flex;
+  justify-content:start;
+  flex-wrap: wrap;
+  padding: 0px 30px;
+  padding-bottom: 20px;
+  gap: 20px;
 }
-#task-4{
-  background-color:#ffeb3b;
-      }
-#task-5{
-  background-color:#ff4081;
+.header-data{
+  background-color:black;
+  color:white;
+  padding: 25px 10px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  border-radius: 5px;
+  font-size: 18px;
+  /* background-color: aqua; */
+}
+#diff2{
+color:#388e3c;
+}
+#diff4{
+color:#d32f2f;
+}
+#diff1{
+  color:#2196f3;
+
+}
+#diff3{
+color:#ffeb3b;
+}
+.special-div{
+  width: 100%;
+/* background-color: aqua; */
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 30px;
+
+}
+.complete-special{
+  display: inline-block;
+  width: 48%;
+}
+.failed-special{
+  display: inline-block;
+  width: 48%;
+}
+.task-action-buttons {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.mark-completed-btn, .mark-failed-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px; /* Rounded corners */
+  transition: transform 0.3s ease;
+  flex: 1; /* Ensure both buttons have equal width */
+}
+
+.mark-completed-btn {
+  background-color: green;
+  color: white;
+}
+
+.mark-failed-btn {
+  background-color: red;
+  color: white;
+}
+
+.mark-completed-btn:hover, .mark-failed-btn:hover {
+  transform: scale(1.05); /* Slight enlarge on hover */
+}
+
+.status-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.status-message.completed {
+  background-color: green;
+  padding: 10px 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.status-message.failed {
+  background-color: red;
+  padding: 10px 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
 }

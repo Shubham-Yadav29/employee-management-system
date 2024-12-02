@@ -1,59 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AcceptTask from '../../TaskLists/AcceptTask';
+import CompletedTask from '../../TaskLists/CompletedTask';
+import FailedTask from '../../TaskLists/FailedTask';
+import NewTask from '../../taskLists/NewTask';
+import CompletedTaskCount from '../../taskCount/CompletedTaskCount';
+import FailedTaskCount from '../../taskCount/FailedTaskCount';
 
-const Greeting = () => {
+
+const Greeting = ({ data }) => {
+    const [completedCount, setCompletedCount] = useState(0);  // State to track completed tasks
+    const [failedCount, setFailedCount] = useState(0);  // State to track failed tasks
+
+    // Function to increment completed count
+    const incrementCompleted = () => {
+        setCompletedCount(prevCount => prevCount + 1);
+    };
+
+    // Function to increment failed count
+    const incrementFailed = () => {
+        setFailedCount(prevCount => prevCount + 1);
+    };
+
     return (
-        <div className='task-cover'>
-    <div className="greeting-container">
-
-        <div className="task-header">
-        <p className="top-left">High</p>
-        <p className="top-right">10 Nov 2024</p>
+        <div className="component-divs" id="task-list">
+            <div className="special-div">
+                <p className='complete-special'>
+                    <CompletedTaskCount completedCount={completedCount} />
+                </p>
+                <p className='failed-special'>
+                    <FailedTaskCount failedCount={failedCount} />
+                </p>
+                
+            </div>
+            
+            {data.tasks.map((task, idx) => {
+                if (task.active) {
+                    return <AcceptTask key={idx} data={task} />;
+                }
+                if (task.failed) {
+                    return <FailedTask key={idx} data={task} />;
+                }
+                if (task.new_task) {
+                    return <NewTask 
+                        key={idx} 
+                        data={task} 
+                        incrementCompleted={incrementCompleted} 
+                        incrementFailed={incrementFailed} 
+                    />;
+                }
+                if (task.completed) {
+                    return <CompletedTask key={idx} data={task} />;
+                }
+            })}
+            
+            {/* Pass completedCount to CompletedTaskCount */}
+            
+            
         </div>
-
-        <div className="content">
-        <h1 className="header">Welcome to Our Page</h1>
-        <p className="description">This is some text placed below the header. It's positioned in the center of the div.</p>
-        </div>
-    </div>
-    <div className="greeting-container">
-        
-    <div className="task-header">
-    <p className="top-left">High</p>
-    <p className="top-right">10 Nov 2024</p>
-    </div>
-
-    <div className="content">
-        <h1 className="header">Welcome to Our Page</h1>
-        <p className="description">This is some text placed below the header. It's positioned in the center of the div.</p>
-    </div>
-    </div>
-    <div className="greeting-container">
-
-    <div className="task-header">
-    <p className="top-left">High</p>
-    <p className="top-right">10 Nov 2024</p>
-    </div>
-
-    <div className="content">
-    <h1 className="header">Welcome to Our Page</h1>
-    <p className="description">This is some text placed below the header. It's positioned in the center of the div.</p>
-    </div>
-</div>
-<div className="greeting-container">
-
-    <div className="task-header">
-    <p className="top-left">High</p>
-    <p className="top-right">10 Nov 2024</p>
-    </div>
-
-    <div className="content">
-        <h1 className="header">Welcome to Our Page</h1>
-        <p className="description">This is some text placed below the header. It's positioned in the center of the div.</p>
-    </div>
-    </div>
-    
-    </div>
     );
 };
+
 
 export default Greeting;

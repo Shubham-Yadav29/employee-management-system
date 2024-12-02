@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-// import Header2 from '../other/Header2';
+import Header2 from '../other/Header2';
 import Task2 from '../other/Task2'
 
-const App = () => {
+const App = (props) => {
     return (
     <>
-    {/* <Header2/> */}
+    <Header2 changeUser={props.changeUser}/>
     <Task2/>
     </>
     );

@@ -1,12 +1,12 @@
 import React from 'react';
-// import Header from '../other/Header';
+import Header from '../other/Header';
 import Task from '../other/Task';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
 return (
     <>
-    {/* <Header/> */}
-    <Task/>
+    <Header  changeUser={props.changeUser} data={props.data} />
+    <Task data={props.data}/>
     </>
 );
 };

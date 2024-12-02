@@ -1,136 +1,118 @@
+
 // Employees data
 const employees = [
     {
-        "email": "employee1@example.com",
+        "name": "Arjun Sharma",
+        "email": "Arjun@01.com",
         "password": "123",
+        "id": "1",
         "tasks": [
             {
-                "task_title": "Task 1",
-                "task_description": "Complete the monthly report.",
+                "task_title": "Complete Monthly Report",
+                "task_description": "Prepare a comprehensive report on the progress of various company departments, including revenue, expenses, and employee performance for the past month. Submit the report to the management team by the end of the week.",
                 "task_date": "2024-11-01",
                 "category": "Report",
-                "active": true,
-                "new_task": true,
-                "completed": false,
-                "failed": false
-            },
-            {
-                "task_title": "Task 2",
-                "task_description": "Update the employee records.",
-                "task_date": "2024-11-02",
-                "category": "Admin",
-                "active": true,
-                "new_task": true,
-                "completed": false,
-                "failed": false
-            },
-            {
-                "task_title": "Task 3",
-                "task_description": "Review project proposals.",
-                "task_date": "2024-11-03",
-                "category": "Project Management",
                 "active": false,
-                "new_task": false,
-                "completed": true,
+                "new_task": true,
+                "completed": false,
                 "failed": false
-            }
-        ]
+            },
+        ],
+        "task_count": {
+            "active": 0,
+            "new_task": 1,
+            "completed": 0,
+            "failed": 0
+        }
     },
     {
-        "email": "employee2@example.com",
+        "name": "Priya Verma",
+        "email": "Priya@02.com",
         "password": "123",
         "tasks": [
             {
-                "task_title": "Task 1",
-                "task_description": "Organize the team meeting.",
+                "task_title": "Organize Team Meeting",
+                "task_description": "Schedule and arrange a team meeting to discuss project updates, team goals, and any issues. Prepare an agenda, send invites to the team, and ensure that meeting materials are ready before the session.",
                 "task_date": "2024-11-01",
                 "category": "Meeting",
-                "active": true,
+                "active": false,
                 "new_task": true,
                 "completed": false,
                 "failed": false
             },
             {
-                "task_title": "Task 2",
-                "task_description": "Prepare financial overview.",
+                "task_title": "Prepare Financial Overview",
+                "task_description": "Compile financial data, including expenses, income, and forecasts for the quarter. Prepare a detailed report and presentation to provide an overview of the company’s financial health to the senior management team.",
                 "task_date": "2024-11-02",
                 "category": "Finance",
-                "active": true,
+                "active": false,
                 "new_task": true,
                 "completed": false,
                 "failed": false
             }
-        ]
+        ],
+        "task_count": {
+            "active": 0,
+            "new_task": 2,
+            "completed": 0,
+            "failed": 0
+        }
     },
     {
-        "email": "employee3@example.com",
+        "name": "Ravi Patel",
+        "email": "Ravi@03.com",
+        "password": "123",
+        "tasks": [
+
+        ],
+        "task_count": {
+            "active": 0,
+            "new_task": 0,
+            "completed": 0,
+            "failed": 0
+        }
+    },
+    {
+        "name": "Sita Reddy",
+        "email": "Sita@04.com",
         "password": "123",
         "tasks": [
             {
-                "task_title": "Task 1",
-                "task_description": "Plan the new product launch.",
-                "task_date": "2024-11-01",
-                "category": "Marketing",
-                "active": true,
-                "new_task": true,
-                "completed": false,
-                "failed": false
-            },
-            {
-                "task_title": "Task 2",
-                "task_description": "Coordinate with vendors for supplies.",
-                "task_date": "2024-11-02",
-                "category": "Procurement",
-                "active": true,
-                "new_task": true,
-                "completed": false,
-                "failed": false
-            }
-        ]
-    },
-    {
-        "email": "employee4@example.com",
-        "password": "123",
-        "tasks": [
-            {
-                "task_title": "Task 1",
-                "task_description": "Update the website content.",
+                "task_title": "Update Website Content",
+                "task_description": "Review and update content across the company website, ensuring all information is current and relevant. Add new content to reflect recent changes in the company’s services and offerings.",
                 "task_date": "2024-11-01",
                 "category": "Content",
-                "active": true,
+                "active": false,
                 "new_task": true,
                 "completed": false,
                 "failed": false
             },
-            {
-                "task_title": "Task 2",
-                "task_description": "Create social media posts.",
-                "task_date": "2024-11-02",
-                "category": "Social Media",
-                "active": true,
-                "new_task": true,
-                "completed": false,
-                "failed": false
-            }
-        ]
+        ],
+        "task_count": {
+            "active": 0,
+            "new_task": 1,
+            "completed": 0,
+            "failed": 0
+        }
     },
     {
-        "email": "employee5@example.com",
+        "name": "Aarti Kumari",
+        "email": "Aarti@05.com",
         "password": "123",
         "tasks": [
             {
-                "task_title": "Task 1",
-                "task_description": "Attend client meeting.",
+                "task_title": "Attend Client Meeting",
+                "task_description": "Attend a scheduled meeting with a client to discuss project progress, provide updates, and clarify any concerns. Prepare a presentation highlighting key achievements and next steps for the project.",
                 "task_date": "2024-11-01",
                 "category": "Client Relations",
-                "active": true,
+                "active": false,
                 "new_task": true,
                 "completed": false,
                 "failed": false
             },
             {
-                "task_title": "Task 2",
-                "task_description": "Prepare product demo.",
+                "task_title": "Prepare Product Demo",
+                "task_description": "Develop and prepare a demo for the new product. Ensure all aspects of the product are presented clearly, addressing potential client questions. Set up the demo environment and rehearse before the actual presentation.",
                 "task_date": "2024-11-02",
                 "category": "Sales",
                 "active": true,
@@ -138,19 +120,17 @@ const employees = [
                 "completed": true,
                 "failed": false
             },
-            {
-                "task_title": "Task 3",
-                "task_description": "Review competitor analysis.",
-                "task_date": "2024-11-03",
-                "category": "Research",
-                "active": true,
-                "new_task": false,
-                "completed": false,
-                "failed": true
-            }
-        ]
+        ],
+        "task_count": {
+            "active": 0,
+            "new_task": 2,
+            "completed": 0,
+            "failed": 0
+        }
     }
 ];
+
+
 // Admin data
 const admin = [
     {
@@ -167,7 +147,8 @@ export const setlocalStorage = () => {
 export const getlocalStorage = () => {
     const employee = JSON.parse(localStorage.getItem("employees"))
     const admin = JSON.parse(localStorage.getItem("admin"))
-    console.log(employee ,admin)
+    
+    return { employee, admin };  // Return both as an object
 };
 
 // export  setlocalStorage;
