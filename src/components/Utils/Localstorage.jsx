@@ -153,3 +153,33 @@ export const getlocalStorage = () => {
 
 // export  setlocalStorage;
 export default getlocalStorage;
+
+
+//Hello!
+
+// It feels like a long time ago that I started working on this project – over 10-15 days of hard work, and I’m excited to finally share the results with you! 🎉
+
+// I’ve completed an Employee Management System, where managers can assign tasks to employees, and employees can mark their work as completed or failed. The records of their completed or failed tasks are conveniently displayed in the header.
+
+// The admin also has access to the entire dashboard, with the ability to view and manage all employees’ tasks and their progress. While this is not a large-scale application ready for real-world deployment, it’s been a fantastic project to grasp the fundamentals behind bigger time-tracking applications.
+
+// I’ve used local storage to temporarily store employee data, and as a special touch, I’ve included a login system where both employees and the admin can access their dashboards using their credentials (email and password).
+
+// Below is the login data for employees and the admin:
+
+// Name	Email	Password
+// Arjun Sharma	Arjun@01.com	123
+// Priya Verma	Priya@02.com	123
+// Ravi Patel	Ravi@03.com	123
+// Sita Reddy	Sita@04.com	123
+// Aarti Kumari	Aarti@05.com	123
+// This project has provided a great hands-on experience with basic concepts and workflows that could be applied to larger, more complex systems in the future.
+
+// Feel free to check out the project live here: Employee Management System
+
+// For the source code, you can explore it on GitHub: GitHub Repository
+
+// Thanks for reading, and feel free to ask me any questions if you'd like to know more about the project!
+
+// Best regards,
+// [Your Name]
