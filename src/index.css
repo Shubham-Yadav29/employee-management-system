@@ -16,13 +16,19 @@ body {
 
 .login-container {
   display: flex;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   height: 100%;
   padding: 20px;
   /* background-color: aqua; */
 }
-
+@media screen and (max-width: 770px) {
+  .login-container {
+    display: flex;
+    flex-direction: column;  /* Correct the typo here */
+  }
+}
 .login-box {
   height: 350px;
   background-color: #1e1e1e;
@@ -633,4 +639,63 @@ gap: 30px;
     margin-bottom: 30px;
   }
   
+}
+
+/* General container */
+.container-01 {
+  justify-content: start;
+  height: 50px;
+  width: 380px;
+  padding: 35px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: white;
+  min-height: 440px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15), 5px 5px 5px rgba(255, 64, 129, 0.3);
+}
+
+/* Title of the section */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color:  #ff4081; /* Red color */
+  margin-bottom: 20px;
+}
+
+/* Table structure */
+.table {
+  width: 100%;
+}
+
+/* Header of the table */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color:  #ff4081; /* Red color */
+  border-bottom: 2px solid  #ff4081;
+  padding-bottom: 10px;
+}
+
+/* Rows in the table */
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid  #ff4081;
+}
+
+/* Admin Panel Access Section */
+.admin-panel-01 {
+  width: 300px;
+  margin-top: 20px;
+  color:  #ff4081; /* Red color */
+  font-size: 18px;
+}
+
+.alag{
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
 }
